@@ -1,7 +1,7 @@
 // path of the template to use
         def templatePath = 'openshift-template.json'
         // name of the template that will be created
-        def templateName = 'node-example'
+        def templateName = 'openshift-pipeline-example'
         // NOTE, the "pipeline" directive/closure from the declarative pipeline syntax needs to include, or be nested outside,
         // and "openshift" directive/closure from the OpenShift Client Plugin for Jenkins.  Otherwise, the declarative pipeline engine
         // will not be fully engaged.
