@@ -1,6 +1,9 @@
 {
   "kind": "Template",
   "apiVersion": "v1",
+  "metadata": {
+    "template.openshift.io/bindable": "false"
+  },
   "parameters": [
     {
       "name": "NAME",
