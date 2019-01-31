@@ -62,10 +62,11 @@
                         script {
                             openshift.withCluster() {
                                 openshift.withProject() {
-                                    def builds = openshift.selector("bc", templateName).related('builds')
-                                    builds.untilEach(1) {
-                                        return (it.object().status.phase == "Complete")
+                                    def bld = openshift.startBuild(templateName)
+                                    bld.untilEach {
+                                        return it.object().status.phase == "Running"
                                     }
+                                    bld.logs('-f')
                                 }
                             }
                         } // script
