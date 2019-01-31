@@ -4,6 +4,10 @@
   "metadata": {
     "template.openshift.io/bindable": "false"
   },
+  "labels": {
+    "template": "openshift-pipeline-example",
+    "app": "openshift-pipeline-example"
+  },
   "parameters": [
     {
       "name": "NAME",
