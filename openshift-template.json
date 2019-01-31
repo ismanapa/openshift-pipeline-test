@@ -59,7 +59,10 @@
           }
         },
         "source": {
-          "type": "Binary"
+          "type": "Git",
+          "git": {
+            "uri": "https://github.com/ismanapa/openshift-pipeline-test"
+          }
         }
       }
     }
