@@ -30,6 +30,28 @@
           "description": "Keeps track of changes in the application image"
         }
       }
+    },
+    {
+      "kind": "BuildConfig",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "${NAME}"
+      },
+      "spec": {
+        "runPolicy": "Serial",
+        "strategy": {
+          "type": "DockerImage",
+          "dockerStrategy": {
+            "dockerfilePath": "Dcokerfile"
+          }
+        },
+        "output": {
+          "to": {
+            "kind": "ImageStream",
+            "name": "${NAME}:latest"
+          }
+        }
+      }
     }
   ]
 }
