@@ -50,6 +50,9 @@
             "kind": "ImageStream",
             "name": "${NAME}:latest"
           }
+        },
+        "source": {
+          "type": "Binary"
         }
       }
     }
