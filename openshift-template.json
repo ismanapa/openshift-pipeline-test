@@ -49,7 +49,7 @@
         "strategy": {
           "type": "DockerImage",
           "dockerStrategy": {
-            "dockerfilePath": "Dcokerfile"
+            "dockerfilePath": "Dockerfile"
           }
         },
         "output": {
