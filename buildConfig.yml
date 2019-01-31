@@ -1,0 +1,13 @@
+kind: "BuildConfig"
+apiVersion: "v1"
+metadata:
+  name: "pipeline-config" 
+spec:
+  source: 
+    type: "Git"
+    git:
+      uri: "https://github.com/ismanapa/openshift-pipeline-test"
+  strategy: 
+    type: "JenkinsPipeline"
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: Jenkinsfile
