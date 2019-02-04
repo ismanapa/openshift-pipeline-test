@@ -98,7 +98,7 @@
         "strategy": {
           "type": "DockerImage",
           "dockerStrategy": {
-            "dockerfilePath": "Dockerfile"
+            "dockerfilePath": "docker/Dockerfile"
           }
         },
         "output": {
