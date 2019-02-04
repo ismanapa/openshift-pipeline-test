@@ -45,26 +45,24 @@
                 //         } // script
                 //     } // steps
                 // } // stage
-                stage('create') {
+                // stage('create') {
+                //     steps {
+                //         script {
+                //             openshift.withCluster() {
+                //                 openshift.withProject() {
+                //                     // create a new application from the templatePath
+                //                     /openshift.newApp(templatePath)
+                //                 }
+                //             }
+                //         } // script
+                //     } // steps
+                // } // stage
+                stage('build') {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
                     steps {
                         script {
                             openshift.withCluster() {
                                 openshift.withProject() {
-                                    // create a new application from the templatePath
-                                    // openshift.newApp(templatePath)
-                                    // update application from the templatePath
-                                    openshift.apply(templatePath)
-                                }
-                            }
-                        } // script
-                    } // steps
-                } // stage
-                stage('build') {
-                    steps {
-                        script {
-                            openshift.withCluster() {
-                                openshift.withProject() {
-                                    def bld = openshift.startBuild(templateName)
+                                    def bld = openshift.startBuild(templateName, "--env BUILD_ID=${env.BUILD_ID}")
                                     bld.untilEach {
                                         return it.object().status.phase == "Running"
                                     }
