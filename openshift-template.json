@@ -54,7 +54,7 @@
         },
         "output": {
           "to": {
-            "kind": "ImageStream",
+            "kind": "ImageStreamTag",
             "name": "${NAME}:latest"
           }
         },
