@@ -45,18 +45,20 @@
                 //         } // script
                 //     } // steps
                 // } // stage
-                // stage('create') {
-                //     steps {
-                //         script {
-                //             openshift.withCluster() {
-                //                 openshift.withProject() {
-                //                     // create a new application from the templatePath
-                //                     openshift.newApp(templatePath)
-                //                 }
-                //             }
-                //         } // script
-                //     } // steps
-                // } // stage
+                stage('create') {
+                    steps {
+                        script {
+                            openshift.withCluster() {
+                                openshift.withProject() {
+                                    // create a new application from the templatePath
+                                    // openshift.newApp(templatePath)
+                                    // update application from the templatePath
+                                    openshift.apply(templatePath)
+                                }
+                            }
+                        } // script
+                    } // steps
+                } // stage
                 stage('build') {
                     steps {
                         script {
